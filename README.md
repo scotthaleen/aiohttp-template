@@ -5,7 +5,7 @@
 ![Python package](https://github.com/scotthaleen/aiohttp-template/workflows/Python%20package/badge.svg)
 
 
-![server example](docs/aioserver_1080p.gif)
+![server example](docs/aioserver_720p.gif)
 
 
 install [cookiecutter](https://cookiecutter.readthedocs.io/)
