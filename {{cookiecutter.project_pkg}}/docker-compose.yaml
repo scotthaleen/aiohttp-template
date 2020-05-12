@@ -1,0 +1,40 @@
+version: "3"
+services:
+  redis:
+    image: redis
+    container_name: redis1
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+  {{cookiecutter.project_pkg}}:
+    build: .
+    container_name: {{cookiecutter.project_pkg}}1
+    links:
+      - redis
+    ports:
+      - "8080:8080"
+    volumes:
+      - {{cookiecutter.project_pkg}}_resources:/opt/{{cookiecutter.project_pkg}}/resources
+      - {{cookiecutter.project_pkg}}_logs:/var/log/{{cookiecutter.project_pkg}}
+
+
+volumes:
+  redis_data:
+    driver: local
+    driver_opts:
+      type: volume
+      device: ${PWD}/data/redis
+      o: bind
+  {{cookiecutter.project_pkg}}_resources:
+    driver: local
+    driver_opts:
+      type: volume
+      device: ${PWD}/resources
+      o: bind
+  {{cookiecutter.project_pkg}}_logs:
+    driver: local
+    driver_opts:
+      type: volume
+      device: ${PWD}/data/logs
+      o: bind
