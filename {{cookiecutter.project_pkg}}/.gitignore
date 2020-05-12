@@ -141,3 +141,6 @@ cython_debug/
 tmp/
 data/
 logs/
+
+!data/redis/.keep
+!data/logs/.keep
