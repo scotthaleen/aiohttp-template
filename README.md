@@ -1,6 +1,8 @@
 
 
 ## aiohttp server template
+![Docker Image CI](https://github.com/scotthaleen/aiohttp-template/workflows/Docker%20Image%20CI/badge.svg) 
+![Python package](https://github.com/scotthaleen/aiohttp-template/workflows/Python%20package/badge.svg)
 
 install [cookiecutter](https://cookiecutter.readthedocs.io/)
 ```
