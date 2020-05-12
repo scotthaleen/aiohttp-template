@@ -1,0 +1,14 @@
+app:
+  host: 0.0.0.0
+  port: 8888
+
+redis:
+  host: 0.0.0.0
+  port: 6379
+
+background_task:
+  name: sample task
+  enabled: true
+  startup_delay: 60
+  delay: 15
+

@@ -1,0 +1,27 @@
+name: Python package
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: [3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install cookiecutter
+        run: pip install --user cookiecutter
+      - name: Generate Server
+        run: ./cookie-ci.py
+      - name: Install Dev Requirements
+        working-directory: ./ciserver
+        run: python -m pip install -r requirements-dev.txt
+      - name: Run Tox
+        working-directory: ./ciserver
+        run: tox -e py38

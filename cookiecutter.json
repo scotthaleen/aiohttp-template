@@ -1,0 +1,9 @@
+{
+    "github_user": "scotthaleen",
+    "dockerhub_user": "{{ cookiecutter.github_user.lower() }}",
+    "project_name": "aiohttp server",
+    "project_pkg": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_script": "{{ cookiecutter.project_pkg }}",
+    "project_short_description": "Python aio http server",
+    "version": "0.0.1"
+}
